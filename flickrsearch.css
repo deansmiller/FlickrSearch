@@ -1,0 +1,50 @@
+div#container {
+	margin: 0 auto;
+	width: 60%;
+}
+
+div#container > div {
+	padding: 2%;
+	border: 1px solid #ddd;	
+}
+
+div#photo-container {
+	margin-bottom: 4%;
+}
+
+div#pagination-container {
+	width: 95%;
+	margin: 0 auto;
+}
+
+img.photos {
+	width: 21%;
+	margin: 2%;
+}
+
+input.input {
+	height: 75px;
+	width: 90%;
+	margin-top: 2%;
+	margin-left: 5%;
+	font-size: 2em;	
+	text-align: center;
+	margin-bottom: 5%;
+}
+
+ul.pagination {
+	margin: 0 auto;
+	padding-left: 15%;
+}
+
+ul.pagination li {
+	display: inline-table;
+	border: 1px solid #ddd;
+	padding: 2%;
+	cursor: pointer;
+}
+
+
+ul.pagination li.active {
+	border: 1px solid red;
+}
