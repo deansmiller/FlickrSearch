@@ -105,14 +105,21 @@ var Paginator = (function($){
 				if(nextPage == this.lastPage){
 					this.displayPages($("ul.pagination li.page-element[page='" + nextPage + "']"));
 				}
+
+				if(nextPage != this.totalPages){
+					this.currentPage = nextPage;
+				}
+
 			} else if(move === "prev" && currentPage > this.minPage) { 
 				nextPage = currentPage - 1;
 				if(nextPage == this.firstPage){
 					this.displayPages($("ul.pagination li.page-element[page='" + nextPage + "']"));
 				}
-			}
 
-			this.currentPage = nextPage; // keep track of current page
+				if(nextPage != this.minPage){
+					this.currentPage = nextPage;
+				}
+			}
 			
 			return {
 				perPage: this.perPage,
