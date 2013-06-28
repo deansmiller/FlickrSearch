@@ -52,5 +52,6 @@ ul.pagination li.active {
 ul.pagination li[disabled] p{
 /*	border: 1px solid blue;*/
 	text-decoration: line-through;
+	cursor: default;
 }
 
