@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Flickr Module Test</title>
+		<title>Flickr Module Test - Dean S. Miller</title>
 		<link rel="stylesheet" type="text/css" href="flickrsearch.css">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	</head>
@@ -18,11 +18,15 @@
 
 			jQuery(document).ready(function(){
 
-				var flickrSearch = new FlickrSearch("7cccab466e067c6f65517fb27d8eb71d"),
-					perPage = 4;
+				var flickrSearch = new FlickrSearch("7cccab466e067c6f65517fb27d8eb71d", 4),
+					paginator = new Paginator("pagination-container", 4);
+
+				paginator.onPageClick(function(config){
+					flickrSearch.search(config);
+				});	
 
 				flickrSearch.setPhotoContainer("photo-container");
-				flickrSearch.setPaginationContainer("pagination-container");
+				flickrSearch.setPaginator(paginator);
 				
 				jQuery("#searchBox").keypress(function(e){
 					var query = jQuery(this).val(),
@@ -43,7 +47,7 @@
 		</script>
 
 	</body>
-	
+	<script type="text/javascript" src="paginator.js"></script>
 	<script type="text/javascript" src="flickrsearch.js"></script>
 
 </html>
