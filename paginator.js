@@ -93,6 +93,12 @@ var Paginator = (function($){
 		// highlight active page
 		highlightPageLink: function(page){
 			$(".pagination .page-element[page='" + page + "']").addClass("active");
+			if(page == this.minPage){
+				$(".pagination li#prevPageLink").attr("disabled", true);
+			} else $(".pagination li#prevPageLink").attr("disabled", false);
+				if(page == this.totalPages){
+				$(".pagination li#nextPageLink").attr("disabled", true);
+			} else $(".pagination li#nextPageLink").attr("disabled", false);
 		},
 
 		//next or previous page links clicked, move to the next or previous page

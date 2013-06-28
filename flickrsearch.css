@@ -49,7 +49,8 @@ ul.pagination li.active {
 	border: 1px solid red;
 }
 
-ul.pagination li[disabled] {
-	border: 1px solid blue;
+ul.pagination li[disabled] p{
+/*	border: 1px solid blue;*/
+	text-decoration: line-through;
 }
 
